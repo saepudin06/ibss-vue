@@ -59,7 +59,8 @@ router.beforeEach((to, from, next) => {
 Vue.mixin({
     data() {
         return {
-            base_Url: 'http://localhost/ibss/'
+            base_Url: 'http://10.60.175.174/ibss/'
+                // base_Url: 'http://localhost/ibss/'
         }
     },
     methods: {
