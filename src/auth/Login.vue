@@ -167,7 +167,7 @@
 
                 axios({
                     method: 'post',
-                    url: 'http://localhost/ibss/api/admin/auth/login',
+                    url: this.base_Url + 'api/admin/auth/login',
                     data: params
                 }).then((res) => {
                     
