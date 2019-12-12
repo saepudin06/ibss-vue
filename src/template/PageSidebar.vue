@@ -25,19 +25,19 @@
                 </a>
             </div>
             <ul id="js-nav-menu" class="nav-menu">
-                <li>
-                    <a href="javascript:;" @click="menuusers('Users')" title="Users" data-filter-tags="users">
+                <li @click="menuusers('Users')" v-bind:class="{'active':(active_li == 'Users')}">
+                    <a href="javascript:;" title="Users" data-filter-tags="users">
                         <i class="fal fa-file"></i>
                         <span class="nav-link-text" data-i18n="nav.users">Users</span>
                     </a>
                 </li>
-                <li>
+                <li v-bind:class="{'active':(active_li == 'Modules')}">
                     <a href="javascript:;" title="Modules" data-filter-tags="modules">
                         <i class="fal fa-file"></i>
                         <span class="nav-link-text" data-i18n="nav.modules">Modules</span>
                     </a>
                 </li>                
-                <li>
+                <li v-bind:class="{'active':(active_li == 'Roles')}">
                     <a href="javascript:;" title="Roles" data-filter-tags="roles">
                         <i class="fal fa-file"></i>
                         <span class="nav-link-text" data-i18n="nav.roles">Roles</span>
@@ -53,12 +53,15 @@
 <script>
     export default {
         data() {
-            return {}
+            return {
+                active_li:''
+            }
         },
         created() {},
         methods:{
             menuusers(nameComponent){
                 //call method in parent component
+                this.active_li = nameComponent;
                 this.$parent.changeComponent(nameComponent);                
             }
         }
